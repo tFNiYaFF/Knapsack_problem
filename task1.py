@@ -10,13 +10,13 @@ def fitness(individual, data):
             weight += item[0]
             volume += item[1]
             price += item[2]
-    if weight > max_weight or volume > _volume:
+    if weight > max_weight or volume > max_volume:
         price = 0
     return price
 
 
 with open('12.txt') as f:
-    max_weight, _volume = [float(x) for x in next(f).split()]
+    max_weight, max_volume = [float(x) for x in next(f).split()]
     data = []
     for line in f:
         data.append([float(x) for x in line.split()])
